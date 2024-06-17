@@ -6,9 +6,11 @@ app.on('ready', () => {
 
     mainWindow = new BrowserWindow({
         width: 800,
-        heigth: 600
+        heigth: 600,
+        
     });
 
     mainWindow.loadURL(`file://${__dirname}/index.html`)
 
 });
+
