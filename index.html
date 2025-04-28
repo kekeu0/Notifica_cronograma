@@ -23,15 +23,25 @@
     <button id="notify">Notificação</button>
 
     <div id="addT">
-        <form action="">
-            <p>
-                <label for=""></label>
-                
-            </p>
-        </form>
+        <input type="text" placeholder="Digite sua tarefa...">
+        <input type="time" name="hour" id="hora">
+        <button>Adicionar Tarefa</button>
     </div>
-    <div id="tList"></div>
-    <aside id="menuLat"></aside>
+
+    <div id="tList">
+        <ul>
+            <li>
+                <img src="assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Fechar">
+                <input type="checkbox" name="" id="check">
+                <p>Programar</p>
+            </li>
+        </ul>
+    </div>
+
+    <aside id="menuLat">
+        <img src="assets/notifications_active_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Notificação Ativa">
+        <img src="assets/settings_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Configurações">
+    </aside>
     
     <script src="renderer.js"></script>
 </body>
