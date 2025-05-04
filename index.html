@@ -17,30 +17,37 @@
 </head>
 <body>
     <div id="tits">
-    <h1 id="titulo">CronoFy</h1>
-    <h3 id="subt">Notificando seu cronograma</h3>
+        <h1 id="titulo">CronoFy</h1>
+        <h3 id="subt">Notificando seu cronograma</h3>
     </div>
-    <button id="notify">Notificação</button>
 
     <div id="addT">
-        <input type="text" placeholder="Digite sua tarefa...">
-        <input type="time" name="hour" id="hora">
-        <button>Adicionar Tarefa</button>
+        <input class="input-task" type="text" placeholder="Digite sua tarefa...">
+        <input
+        class="input-time" type="time" name="hour" id="hora">
+        <button class="add-task">Adicionar Tarefa</button>
+    </div>
+
+    <div id="texto2">
+        <h4>Tarefas</h4>
+        <h4>Horários</h4>
     </div>
 
     <div id="tList">
         <ul>
-            <li>
-                <img src="assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Fechar">
-                <input type="checkbox" name="" id="check">
-                <p>Programar</p>
-            </li>
+            <li class="tarefa">
+                <img src="assets/close_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png" alt="Fechar">
+                <img src="assets/check_box_outline_blank_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png" alt="Caixa de Check">
+                <p class="ltask">Editar vídeo Delta Force</p>
+                <p class="ltime">09:00</p>
+            </li>    
         </ul>
+
     </div>
 
     <aside id="menuLat">
-        <img src="assets/notifications_active_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Notificação Ativa">
-        <img src="assets/settings_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Configurações">
+        <img src="assets/notifications_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png" alt="Notificação Ativa">
+        <img src="assets/settings_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png" alt="Configurações">
     </aside>
     
     <script src="renderer.js"></script>

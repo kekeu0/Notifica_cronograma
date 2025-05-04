@@ -1,21 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root{
+    --cor-logotipo:#ECD487;
+    --cor-especial:#F2EC8B;
+    --cor-fonte-fundo:#E4E4E4;
+    --cor-button:#711D5F;
+    --cor-fundo:#1E1E1E;
+}
+
+@font-face {
+    font-family: Merienda;
+    src: url(assets/fonts/Merienda-VariableFont_wght.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Kotta;
+    src: url(assets/fonts/KottaOne-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Lexend;
+    src: url(assets/fonts/Lexend-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: MateSC;
+    src: url(assets/fonts/MateSC-Regular.ttf);
+}
+
+
 body {
     font-family: 'Mate SC', serif;
     align-items: center;
-    background: #1E1E1E;
+    background: var(--cor-fundo);
 }
 
-div.tits{
+#tits{
     font-family: 'Merienda', cursive;
 }
 
-div.addT {
+#addT {
     display: flex;
+    justify-content: center;
     margin: 20px;
+}
+
+.tarefa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+}
+
+.tarefa img{
+    width: 40px;
+
+}
+
+.ltime {
+    margin-left: 10px;
 }
 
 aside {
     display: flex;
     flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 60vh;
+    width: 13vw;
+    gap: 20px;
 }
 
 aside > img{
