@@ -34,13 +34,21 @@
 
 
 body {
-    font-family: 'Mate SC', serif;
-    align-items: center;
+    font-family: 'MateSC', serif;
     background: var(--cor-fundo);
 }
 
-#tits{
-    font-family: 'Merienda', cursive;
+#tits h3{
+    font-family: 'MateSC', cursive;
+    color: var(--cor-especial);
+    font-style: italic;
+    font-size: .8rem;
+    margin: 10px;
+}
+#tits h1{
+    font-family: 'Lexend', cursive;
+    color: var(--cor-logotipo);
+    margin: 10px;
 }
 
 #addT {
@@ -49,17 +57,45 @@ body {
     margin: 20px;
 }
 
-.tarefa{
+#texto2 {
     display: flex;
-    align-items: center;
+    justify-content: end;
+    width: 85vw;
+    gap: 13rem;
+    position: relative;
+    color: var(--cor-especial);
+}
+
+#tList{
+    display: flex;
+    justify-content: center;
+}
+
+#tList ul{
+    display: flex;
     justify-content: center;
     background: white;
+    width: 70vw;
+}
+
+.tarefa{
+    font-family: Kotta;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 15px;
+    width: 100%;
+    height: 2.5rem;
 
 }
 
-.tarefa img{
-    width: 40px;
-
+.dcheck{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.dcheck img{
+    width: 30px;
 }
 
 .ltime {
