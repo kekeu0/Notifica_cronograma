@@ -56,6 +56,31 @@ body {
     justify-content: center;
     margin: 20px;
 }
+#addT input{ /*Na margin troque px por vw para ficar ADD ficar menor (geralmente) que TAREFA*/
+    height: 2.5rem;
+    margin: auto 15px; /* 1vw */
+    border-radius: 2px;
+    border: none;
+}
+.add-task{
+    font-family: Lexend;
+    font-weight: 800;
+    color: var(--cor-button);
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 0 10px; /* 1.1vw */
+}
+.input-task{
+    font-family: Lexend;
+    font-weight: 600;
+    width: 35vw;
+    text-align: center;
+}
+.input-time{
+    width: 9vw;
+}
 
 #texto2 {
     display: flex;
@@ -73,9 +98,10 @@ body {
 
 #tList ul{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background: white;
     width: 70vw;
+    
 }
 
 .tarefa{
@@ -86,33 +112,39 @@ body {
     margin: 0 15px;
     width: 100%;
     height: 2.5rem;
-
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 2px;
 }
 
 .dcheck{
     display: flex;
     justify-content: flex-start;
     gap: 10px;
+    margin-left: 10px;
 }
 .dcheck img{
     width: 30px;
 }
 
+.ltask{
+    font-size: 21px;
+}
+
 .ltime {
-    margin-left: 10px;
+    margin-right: 20px;
 }
 
 aside {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    height: 60vh;
-    width: 13vw;
     gap: 20px;
+    margin: 15px;
+    position: absolute;
+    bottom: 0;
 }
 
 aside > img{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }

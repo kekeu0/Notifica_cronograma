@@ -1,3 +1,4 @@
+// Inicia a janela e diz seu tamanho
 const { app, BrowserWindow} = require('electron');
 
 let mainWindow;
