@@ -55,6 +55,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 20px;
+    margin-left: 40px;
 }
 #addT input{ /*Na margin troque px por vw para ficar ADD ficar menor (geralmente) que TAREFA*/
     height: 2.5rem;
@@ -71,7 +72,13 @@ body {
     border-radius: 20px;
     padding: 10px 15px;
     margin: 0 10px; /* 1.1vw */
+    transition: all .1s ease
 }
+
+.add-task:active{
+    transform: scale(0.96);
+}
+
 .input-task{
     font-family: Lexend;
     font-weight: 600;
@@ -80,15 +87,20 @@ body {
 }
 .input-time{
     width: 9vw;
+    font-family: Lexend;
+    font-weight: 600;
+    text-align: center;
 }
 
+/* Gambiarra */
 #texto2 {
+    color: var(--cor-especial);
     display: flex;
     justify-content: end;
-    width: 85vw;
-    gap: 13rem;
+    width: 70vw;
+    gap: 23vw;
     position: relative;
-    color: var(--cor-especial);
+    left: 16vw;
 }
 
 #tList{
@@ -115,7 +127,13 @@ body {
     background: white;
     margin-bottom: 5px;
     border-radius: 2px;
+    transition: .3s;
 }
+/* Movimenta  a li da tarefa (Indeciso)
+.tarefa:hover { 
+    transform: scale(1.02);
+    transition: .3s;
+} */
 
 .dcheck{
     display: flex;
@@ -125,6 +143,11 @@ body {
 }
 .dcheck img{
     width: 30px;
+    transition: .5s;
+}
+.dcheck img:hover {
+    filter: brightness(50%);
+    transition: .5s;
 }
 
 .ltask{
@@ -144,7 +167,12 @@ aside {
     bottom: 0;
 }
 
-aside > img{
+aside img{
     width: 45px;
     height: 45px;
+    transition: .1s;
+}
+aside img:active{
+    transform: scale(0.96);
+    transition: 0.1s;
 }
