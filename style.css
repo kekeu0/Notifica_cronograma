@@ -138,16 +138,16 @@ body {
 .dcheck{
     display: flex;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 15px;
     margin-left: 10px;
 }
 .dcheck img{
     width: 30px;
+    filter: brightness(85%);
     transition: .5s;
 }
 .dcheck img:hover {
-    filter: brightness(50%);
-    transition: .5s;
+    filter: brightness(40%);
 }
 
 .ltask{
