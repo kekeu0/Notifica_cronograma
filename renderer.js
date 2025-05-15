@@ -3,15 +3,25 @@ const inputTask = document.querySelector('.input-task');
 const inputTime = document.querySelector('.input-time');
 const fullList = document.querySelector('.ul-list');
 
+let checkIn = "assets/check_box_outline_blank_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png";
+let checkOut = "assets/check_box_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png";
+
 let taskList = []
 
 function adicionarTask(){
-    taskList.push({
-      tarefa: inputTask.value,
-      hora: inputTime.value,
-      concluida: false
-    })
-  //taskList.push(inputTime.value)
+  if(inputTask.value == ''){
+    alert("Você não digitou a tarefa !")
+  }else{ 
+    if(inputTime.value == '' && taskList == ''){
+      alert("Caso queira ser notificado, adicione também o horário da tarefa")
+    }else{
+      taskList.push({
+        tarefa: inputTask.value,
+        hora: inputTime.value,
+        concluida: false
+      })
+    }
+}
 
     inputTask.value = '';
     inputTime.value ='';
@@ -26,25 +36,46 @@ function mostrarTarefas(){
 
       novaLi = novaLi + `
 
-      <li class="tarefa">
+      <li class="tarefa ${item.concluida && "done"}">
           <div class="dcheck">
               <img class="img-close" src="assets/close_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png" alt="Fechar" onclick="deletItem(${index})">
-              <img class="img-check" src="assets/check_box_outline_blank_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png" alt="Caixa de Check">
+              <img class="img-check" src="${item.concluida ? checkOut : checkIn}" alt="Caixa de Check" onclick="concluirTask(${index})">
           </div>
             <p class="ltask">${item.tarefa}</p>
-            <p class="ltime">09:00</p>
+            <p class="ltime">${item.hora}</p>
       </li> 
 
       `
     })
     fullList.innerHTML = novaLi;
+                                //Transforma o obj em string
+    localStorage.setItem('list',JSON.stringify(taskList))
+
 }
 
 function deletItem(index){
-    taskList.splice(index, 1)
+    taskList.splice(index, 1);
     
     mostrarTarefas();
 }
+
+function concluirTask(index){
+    taskList[index].concluida = !taskList[index].concluida;
+    
+    mostrarTarefas();
+}
+
+function recarregarTask(){
+    const taskLocalStorage = localStorage.getItem('list');
+
+    if(taskLocalStorage){
+    taskList = JSON.parse(taskLocalStorage);//Transforma em obj de volta
+    }
+
+    mostrarTarefas();
+}
+
+recarregarTask();
 
 button.addEventListener('click', adicionarTask)
 

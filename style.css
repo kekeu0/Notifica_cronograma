@@ -151,7 +151,7 @@ body {
 }
 
 .ltask{
-    font-size: 21px;
+    font-size: 19px;
 }
 
 .ltime {
@@ -175,4 +175,16 @@ aside img{
 aside img:active{
     transform: scale(0.96);
     transition: 0.1s;
+}
+
+.done {
+   text-decoration: line-through;
+   background-color: #5a5a5ad3; 
+   color: #e2e2e2cc;
+}
+.done img{
+    filter: brightness(65%);
+}
+.done img:hover{
+    filter: brightness(101%);
 }
