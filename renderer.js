@@ -12,15 +12,11 @@ function adicionarTask(){
   if(inputTask.value == ''){
     alert("Você não digitou a tarefa !")
   }else{ 
-    if(inputTime.value == '' && taskList == ''){
-      alert("Caso queira ser notificado, adicione também o horário da tarefa")
-    }else{
       taskList.push({
         tarefa: inputTask.value,
         hora: inputTime.value,
         concluida: false
       })
-    }
 }
 
     inputTask.value = '';
