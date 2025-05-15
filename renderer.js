@@ -9,18 +9,20 @@ let checkOut = "assets/check_box_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png";
 let taskList = []
 
 function adicionarTask(){
-  if(inputTask.value == ''){
-    alert("Você não digitou a tarefa !")
-  }else{ 
+  if(inputTask.value ==''){
+    prompt("Você não digitou a tarefa !") // alert()"BUGA OS INPUT"
+  }else{
       taskList.push({
         tarefa: inputTask.value,
         hora: inputTime.value,
         concluida: false
       })
-}
+
     inputTask.value = '';
     inputTime.value ='';
     mostrarTarefas();
+
+  }
 }
 
 function mostrarTarefas(){
@@ -76,25 +78,3 @@ button.addEventListener('click', adicionarTask)
 
 
 // Textos das notificações
-const NOTIFICATION_TITLE = 'CronosFy';
-const NOTIFICATION_BODY = item.tarefa;
-const CLICK_MESSAGE = 'Notification clicked!';
-
-document.getElementById('notify').addEventListener('click', () => {
-  // Solicita permissão de notificação, se necessário
-  if (Notification.permission === 'granted') {
-    showNotification();
-  } else if (Notification.permission !== 'denied') {
-    Notification.requestPermission().then(permission => {
-      if (permission === 'granted') {
-        showNotification();
-      }
-    });
-  }
-});
-
-function showNotification() {
-  const notification = new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY });
-  
-  
-}
