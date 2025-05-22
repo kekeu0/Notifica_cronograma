@@ -9,13 +9,14 @@ let checkOut = "assets/check_box_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png";
 let taskList = []
 
 function adicionarTask(){
-  if(inputTask.value ==''){
+  if(inputTask.value == ''){
     prompt("Você não digitou a tarefa !") // alert()"BUGA OS INPUT"
   }else{
       taskList.push({
         tarefa: inputTask.value,
         hora: inputTime.value,
-        concluida: false
+        concluida: false,
+        notificado: false
       })
 
     inputTask.value = '';
@@ -77,4 +78,20 @@ recarregarTask();
 button.addEventListener('click', adicionarTask)
 
 
-// Textos das notificações
+// Notificações
+
+if(horaAtual === taskList[index].hora && notificado == false){
+    notificar(index)
+}
+
+const time = new Date();
+const horaAtual = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}`;
+
+const NOTIFICATION_TITLE = 'Notificando sua Tarefa'
+const NOTIFICATION_BODY = 'tarefa'
+// const CLICK_MESSAGE = 'Notificado!' Futura implementação
+
+function notificar(index){
+    new window.Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY });
+    taskList[index].notificado = !taskList[index].notificado;
+}
