@@ -79,19 +79,67 @@ button.addEventListener('click', adicionarTask)
 
 
 // Notificações
-
-if(horaAtual === taskList[index].hora && notificado == false){
-    notificar(index)
+//gpt
+if(Notification.permission !== 'granted') {
+  Notification.requestPermission();
 }
 
-const time = new Date();
-const horaAtual = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}`;
+// Verificação de minuto
 
-const NOTIFICATION_TITLE = 'Notificando sua Tarefa'
-const NOTIFICATION_BODY = 'tarefa'
+setInterval(() => {
+  const time = new Date();
+  const horaAtual = `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}`;
+
+  taskList.forEach((item, index) => {
+    if (item.hora === horaAtual && !item.notificado) {
+      notificar(index);
+    }
+  })
+}, 60000); // = 1 minuto
+
+/* const NOTIFICATION_TITLE = 'Notificando sua Tarefa'
+const NOTIFICATION_BODY = 'tarefa' */
 // const CLICK_MESSAGE = 'Notificado!' Futura implementação
 
 function notificar(index){
-    new window.Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY });
-    taskList[index].notificado = !taskList[index].notificado;
+  if (!notificacoesAtivas) return;
+
+    if(Notification.permission === 'granted') {
+      new Notification('Notificando sua Tarefa', {
+        body: taskList[index].tarefa
+      });
+      taskList[index].notificado = true;
+      localStorage.setItem('list', JSON.stringify(taskList));
+    }
 }
+
+
+
+// Variável global
+//gpt
+
+let notificacoesAtivas = true;
+
+const toggleNotificacao = document.getElementById('toggle-notificacao');
+
+// Recuperar estado salvo
+const notificacoesSalvas = localStorage.getItem('notificacoesAtivas');
+if (notificacoesSalvas !== null) {
+  notificacoesAtivas = notificacoesSalvas === 'true';
+}
+
+// Atualiza imagem conforme o estado
+function atualizarIconeNotificacao() {
+  toggleNotificacao.src = notificacoesAtivas ? 'assets/notifications_active_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png' : 'assets/notifications_76dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png';
+  toggleNotificacao.alt = notificacoesAtivas ? 'Notificações Ativadas' : 'Notificações Desativadas';
+}
+
+atualizarIconeNotificacao();
+
+// Ao clicar no ícone
+toggleNotificacao.addEventListener('click', () => {
+  notificacoesAtivas = !notificacoesAtivas;
+  localStorage.setItem('notificacoesAtivas', notificacoesAtivas);
+  atualizarIconeNotificacao();
+});
+
