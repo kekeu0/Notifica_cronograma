@@ -6,9 +6,9 @@ let mainWindow;
 app.on('ready', () => {
 
     mainWindow = new BrowserWindow({
-        width: 800,
-        heigth: 600,
-        
+        width: 1310,
+        height: 820,
+        autoHideMenuBar: true
     });
 
     mainWindow.loadURL(`file://${__dirname}/index.html`)
