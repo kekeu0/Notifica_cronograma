@@ -17,3 +17,4 @@ app.on('ready', () => {
 });
 
 //Fazer janela de Configurações
+//Fazer Iniciar com o Windows
