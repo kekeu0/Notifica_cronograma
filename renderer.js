@@ -114,6 +114,7 @@ function notificar(index){
 }
 
 
+//Refazer ou modificar com código próprio
 
 // Variável global
 //gpt
@@ -143,3 +144,4 @@ toggleNotificacao.addEventListener('click', () => {
   atualizarIconeNotificacao();
 });
 
+//Fazer botão de configurações
