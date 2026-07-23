@@ -12,8 +12,6 @@ O **Notifica Cronograma** é um aplicativo desktop nascido de uma necessidade pe
 
 Diferente de um To-Do list comum, o grande diferencial deste app é o seu **sistema de alertas ativos**. Ele não apenas lista o que precisa ser feito, mas interage com o usuário enviando notificações nativas na tela nos horários programados. Além dos lembretes padrão, o app envia notificações interativas perguntando se o usuário está, de fato, focado e executando a tarefa atual, ajudando a combater a procrastinação.
 
-*(Dica: Substitua este texto por um GIF ou Print da tela do seu aplicativo rodando e enviando uma notificação)*
-
 ## 🚀 Principais Funcionalidades (Atuais)
 
 Apesar de ainda estar em desenvolvimento, as funcionalidades *core* do projeto já estão operacionais:
